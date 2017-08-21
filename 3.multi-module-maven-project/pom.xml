@@ -33,7 +33,7 @@
 
 	<dependencyManagement>
 		<dependencies>
-			<!-- A number of dependencies here are unnecessary for our example but 
+			<!-- A number of dependencies here are unnecessary for our example but
 				leaving them here to act as an example for typical project with all layers -->
 			<dependency>
 				<groupId>org.springframework</groupId>
@@ -184,6 +184,28 @@
 					<target>1.8</target>
 					<showWarnings>true</showWarnings>
 				</configuration>
+			</plugin>
+			<plugin>
+					<groupId>pl.project13.maven</groupId>
+					<artifactId>git-commit-id-plugin</artifactId>
+					<version>2.1.13</version>
+					<executions>
+							<execution>
+									<goals>
+											<goal>revision</goal>
+									</goals>
+							</execution>
+					</executions>
+					<configuration>
+							<dateFormat>yyyy.MM.dd HH:mm:ss</dateFormat>
+							<verbose>true</verbose>
+							<generateGitPropertiesFile>true</generateGitPropertiesFile>
+							<gitDescribe>
+									<always>false</always>
+									<dirty>-dirty</dirty>
+									<forceLongFormat>false</forceLongFormat>
+							</gitDescribe>
+					</configuration>
 			</plugin>
 		</plugins>
 	</build>
